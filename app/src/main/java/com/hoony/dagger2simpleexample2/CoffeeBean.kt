@@ -1,5 +1,5 @@
 package com.hoony.dagger2simpleexample2
 
-class CoffeeBean {
+open class CoffeeBean {
     fun name(): String = "CoffeeBean"
 }

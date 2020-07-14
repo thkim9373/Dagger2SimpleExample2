@@ -1,11 +1,15 @@
 package com.hoony.dagger2simpleexample2
 
-import dagger.Component
-import javax.inject.Singleton
+import dagger.Subcomponent
 
-@Singleton
-@Component(modules = [CafeModule::class])
+@CoffeeScope
+@Subcomponent(modules = [CoffeeModule::class])
 interface CoffeeComponent {
-    fun cafeInfo(): CafeInfo
     fun coffeeMaker(): CoffeeMaker
+    fun coffeeBean(): CoffeeBean
+
+    @Subcomponent.Builder
+    interface Builder {
+        fun build(): CoffeeComponent
+    }
 }
