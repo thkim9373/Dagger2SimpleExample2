@@ -1,5 +1,7 @@
 package com.hoony.dagger2simpleexample2
 
-class EthiopiaBean : CoffeeBean() {
-    fun name(): String = "EthiopiaBean"
+import javax.inject.Inject
+
+class EthiopiaBean @Inject constructor() : CoffeeBean() {
+    override fun name(): String = "EthiopiaBean"
 }
